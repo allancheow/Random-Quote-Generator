@@ -21,7 +21,7 @@ const quotes = [
     { quote: `Life is a banquet, and most poor suckers are starving to death!`, source: `Mame Dennis (Rosalind Russell)`, citation: `Auntie Mame`, year: 1958 },
     { quote: `If you build it, he will come.`, source: `The Voice (Ed Harris - unconfirmed)`, citation: `Field of Dreams`, year: 1989 },
     { quote: `The stuff that dreams are made of.`, source: `Samuel Spade (Humphrey Bogart)`, citation: `The Maltese Falcon`, year: 1941 },
-    { quote: `Magic Mirror on the wall, who is the fairest one of all?`, source: `Queen / Witch (Lucille La Verne)`, citation: `Snow White and the Seven Dwarfs`, year:  },
+    { quote: `Magic Mirror on the wall, who is the fairest one of all?`, source: `Queen / Witch (Lucille La Verne)`, citation: `Snow White and the Seven Dwarfs`, year: 1937 },
     { quote: `Keep your friends close, but your enemies closer.`, source: `Michael (Al Pacino)`, citation: `The Godfather Part II`, year: 1974 },
     { quote: `I am your father.`, source: `Darth Vader (David Prowse; Voice: James Earl Jones)`, citation: `Star Wars Episode V: The Empire Strikes Back`, year: 1980 },
     { quote: `Just keep swimming.`, source: `Dory (Ellen DeGeneres)`, citation: `Finding Nemo`, year: 2003 },
