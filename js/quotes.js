@@ -16,7 +16,7 @@ const quotes = [
     },
     { 
       quote: `I'm the king of the world!`,
-      source: `Jack Dawson (	Leonardo DiCaprio)`,
+      source: `Jack Dawson (Leonardo DiCaprio)`,
       citation: `Titanic`,
       year: 1997
     },
