@@ -52,7 +52,7 @@ function getRandomQuote() {
 
   // Stored quote Object in variable randQuote
   // - Allan C.
-  let randQuote = quotes[randNumber(quotes)];
+  let randQuote = quotes[randNumber()];
     // Testing for correct property and values in randQuote variable
     // for ( let quoteProp in randQuote ) {
     //   console.log(`${quoteProp}: ${randQuote[quoteProp]}`);
@@ -61,6 +61,10 @@ function getRandomQuote() {
 
   // 3. Return the variable storing the random quote object
   return randQuote;
+
+  // Steps 2 and 3 can be combined as the return statement
+  // and not use the variable.
+  // return quotes[randNumber(quotes)];
 }
 
 // Testing within the getRandomQuote function
@@ -212,4 +216,6 @@ function autoPrintQuote() {
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+// New auto quote button listener
+// - Allan C.
 document.getElementById('auto-quote').addEventListener("click", autoPrintQuote, false);
