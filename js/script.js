@@ -34,8 +34,8 @@ function getRandomQuote() {
 
   /**
    * An arrow expression to randomly generate a number
-   * from 1 through the maxinum number of objects in 
-   * the quotes array. e.g.: 50
+   * from 0 through the maxinum number of objects in 
+   * the quotes array.
    * 
    * @param {number} quotes - Used to set upper limit of number generator
    * @returns {number} A random number
@@ -136,8 +136,75 @@ function printQuote() {
   // "quote-box" div with content in html variable
   // - Allan C.
   document.getElementById('quote-box').innerHTML = html;
+  
+  /*** Exceeds Expectations conditions - 
+   * Background color changes to a random color each time the quote refreshes.
+  ***/
+  /**
+   * An arrow expression to randomly generate a number
+   * from 0 through 256 everytime it's called. 
+   * No @params used in the function.
+   * 
+   * @returns {number} A random number
+   * @author Allan Cheow
+   */
+  const randomNumGen = () => Math.floor(Math.random() * 256) + 1;
+  /**
+   * Used code from "The Refactor Challenge" and updated
+   * to an arrow expression to randomly generate the RGB
+   * color.
+   * 
+   * @param {number} value - Random number from randomNumGen()
+   * @returns {string} A random RGB color value
+   * @author Allan Cheow
+   */
+  const randomRGB = value => `rgb( ${value()}, ${value()}, ${value()} )`;
+  // Selects the <body> tag and replaces the styling of background-color
+  // Used W3School for reference: https://www.w3schools.com/jsref/dom_obj_body.asp
+  // - Allan C.
+  document.querySelector('body').style.backgroundColor = randomRGB(randomNumGen);
 
 };
+
+// Initializing counter for number of times button is pressed
+let counter = 1;
+// Initilizing variable to be used in both scope of if statement
+let autoQuoter;
+
+/**
+   * Created a function which uses the number of times a button is pressed
+   * to turn on and off the auto quote generator. This was completed with 
+   * my limited knowledge and I'm sure there are easier ways to 
+   * accomplish this task.  ::SUCCESS for me::
+   * 
+   * @author Allan Cheow
+   */
+function autoPrintQuote() {
+  if ( counter % 2 !== 0 ) {
+    counter++;
+    // Based on Treehouse FSJS Project Study Guide
+    // reference: https://www.w3schools.com/jsref/met_win_setinterval.asp
+    autoQuoter = setInterval(printQuote, 5000);
+    // Needed to find a way to replace the button text and found resource below
+    // Used W3School reference: https://www.w3schools.com/jsref/jsref_replace.asp
+    let autoButtonText = document.getElementById(`auto-quote`).innerHTML;
+    let replacementText = autoButtonText.replace(`Auto Generate`,`End Auto Generate`);
+    document.getElementById(`auto-quote`).innerHTML = replacementText;
+    console.log(`Auto counter: ${counter}`);
+  } else {
+    counter++;
+    // Needed to find a way to replace the button text and found resource below
+    // Used W3School reference: https://www.w3schools.com/jsref/jsref_replace.asp
+    let autoButtonText = document.getElementById(`auto-quote`).innerHTML;
+    let replacementText = autoButtonText.replace(`End Auto Generate`,`Auto Generate`);
+    document.getElementById(`auto-quote`).innerHTML = replacementText;
+    // Based on Treehouse FSJS Project Study Guide
+    // reference: https://www.w3schools.com/jsref/met_win_clearinterval.asp
+    clearInterval(autoQuoter);
+    console.log(`End Auto Counter: ${counter}`);
+  }
+}
+
 
 /***
  * click event listener for the print quote button
@@ -145,3 +212,4 @@ function printQuote() {
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('auto-quote').addEventListener("click", autoPrintQuote, false);
