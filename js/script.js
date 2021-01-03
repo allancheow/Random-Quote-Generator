@@ -152,7 +152,7 @@ function printQuote() {
    * @returns {number} A random number
    * @author Allan Cheow
    */
-  const randomNumGen = () => Math.floor(Math.random() * 256) + 1;
+  const randomNumGen = () => Math.floor(Math.random() * 225);
   /**
    * Used code from "The Refactor Challenge" and updated
    * to an arrow expression to randomly generate the RGB
