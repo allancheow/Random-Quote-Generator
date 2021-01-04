@@ -125,6 +125,13 @@ function printQuote() {
     html += `<span class="year">${randomQuote.year}</span>`;
   }
 
+  if ( randomQuote.tag ) {
+    // Confirming values in Object properties
+    // - Allan C.
+    console.log(`Tag: ${randomQuote.tag}`);
+    html += `<span class="year"><br>${randomQuote.tag}</span>`;
+  }
+
   // 5. After the two if statements, concatenate the closing </p> 
   // tag to the HTML string
 
