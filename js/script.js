@@ -136,45 +136,32 @@ function printQuote() {
 
 };
 
-// Initializing counter for number of times button is pressed
-let counter = 1;
-// Initilizing variable to be used in both scope of if statement
-let autoQuoter;
-
 /**
-   * Created a function which uses the number of times a button is pressed
-   * to turn on and off the auto quote generator. This was completed with 
-   * my limited knowledge and I'm sure there are easier ways to 
-   * accomplish this task.  ::SUCCESS for me::
-   * 
-   * @author Allan Cheow
-   */
+ * Created a function which uses the number of times a button is pressed
+ * to turn on and off the auto quote generator. This was completed with 
+ * my limited knowledge and I'm sure there are easier ways to 
+ * accomplish this task.  ::SUCCESS for me::
+ * 
+ * @author Allan Cheow
+ */
+
+const autoButtonText = document.querySelector('#auto-quote');
+
 function autoPrintQuote() {
-  if ( counter % 2 !== 0 ) {
-    counter++;
+  if ( autoButtonText.textContent === 'Auto Generate' ) {
     // Based on Treehouse FSJS Project Study Guide
     // reference: https://www.w3schools.com/jsref/met_win_setinterval.asp
     autoQuoter = setInterval(printQuote, 5000);
-    // Needed to find a way to replace the button text and found resource below
-    // Used W3School reference: https://www.w3schools.com/jsref/jsref_replace.asp
-    let autoButtonText = document.getElementById(`auto-quote`).innerHTML;
-    let replacementText = autoButtonText.replace(`Auto Generate`,`End Auto Generate`);
-    document.getElementById(`auto-quote`).innerHTML = replacementText;
-    console.log(`Auto counter: ${counter}`);
+    autoButtonText.textContent = `End Auto Generate`;
+    console.log(`autoButtonText (If true): ${autoButtonText}`);
   } else {
-    counter++;
-    // Needed to find a way to replace the button text and found resource below
-    // Used W3School reference: https://www.w3schools.com/jsref/jsref_replace.asp
-    let autoButtonText = document.getElementById(`auto-quote`).innerHTML;
-    let replacementText = autoButtonText.replace(`End Auto Generate`,`Auto Generate`);
-    document.getElementById(`auto-quote`).innerHTML = replacementText;
+    autoButtonText.textContent = `Auto Generate`;
+    console.log(`autoButtonText (If false): ${autoButtonText}`);
     // Based on Treehouse FSJS Project Study Guide
     // reference: https://www.w3schools.com/jsref/met_win_clearinterval.asp
     clearInterval(autoQuoter);
-    console.log(`End Auto Counter: ${counter}`);
   }
 }
-
 
 /***
  * click event listener for the print quote button
