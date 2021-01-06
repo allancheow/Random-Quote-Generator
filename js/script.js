@@ -137,26 +137,22 @@ function printQuote() {
 };
 
 /**
- * Created a function which uses the number of times a button is pressed
- * to turn on and off the auto quote generator. This was completed with 
- * my limited knowledge and I'm sure there are easier ways to 
- * accomplish this task.  ::SUCCESS for me::
+ * Created an expression function which turns on and off
+ * the auto quote generator on button activation.
  * 
  * @author Allan Cheow
  */
 
 const autoButtonText = document.querySelector('#auto-quote');
 
-function autoPrintQuote() {
+const autoPrintQuote = () => {
   if ( autoButtonText.textContent === 'Auto Generate' ) {
     // Based on Treehouse FSJS Project Study Guide
     // reference: https://www.w3schools.com/jsref/met_win_setinterval.asp
     autoQuoter = setInterval(printQuote, 5000);
     autoButtonText.textContent = `End Auto Generate`;
-    console.log(`autoButtonText (If true): ${autoButtonText}`);
   } else {
     autoButtonText.textContent = `Auto Generate`;
-    console.log(`autoButtonText (If false): ${autoButtonText}`);
     // Based on Treehouse FSJS Project Study Guide
     // reference: https://www.w3schools.com/jsref/met_win_clearinterval.asp
     clearInterval(autoQuoter);
