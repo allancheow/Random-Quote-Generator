@@ -18,10 +18,6 @@ project 1 - A Random Quote Generator
   // and added new script tag in index.html
   // This action was in regards to "Build an Object Challenge"
   // Place quotes.js above script.js for loading order
-  // For loop to test connection to quotes.js ::SUCCESS::
-  //   for ( let i = 0; i < quotes.length; i++) {    
-  //     console.log(`#${i + 1}: ${quotes[i].source}`);
-  //   }
   // - Allan C.
 
 /***
@@ -49,28 +45,10 @@ function getRandomQuote() {
   // 2. Use the random number variable and bracket notation 
   // to grab a random object from the `quotes` array, and 
   // store it in a variable
-
-  // Stored quote Object in variable randQuote
-  // - Allan C.
-  let randQuote = quotes[randNumber()];
-    // Testing for correct property and values in randQuote variable
-    // for ( let quoteProp in randQuote ) {
-    //   console.log(`${quoteProp}: ${randQuote[quoteProp]}`);
-    // }
-    // - Allan C.
-
   // 3. Return the variable storing the random quote object
-  return randQuote;
 
-  // Steps 2 and 3 can be combined as the return statement
-  // and not use the variable.
-  // return quotes[randNumber(quotes)];
+  return quotes[randNumber(quotes)];
 }
-
-// Testing within the getRandomQuote function
-// - Allan C.
-// let randomQuote = getRandomQuote();
-// console.log(randomQuote.quote);
 
 /***
  * `printQuote` function
@@ -80,23 +58,13 @@ function printQuote() {
   // 1. Create a variable that calls the getRandomQuote() 
   // function
 
-  // Calling getRandomQuote() and storing the return
-  // object into randomQuote variable
-  // - Allan C.
   let randomQuote = getRandomQuote();
-    // Testing for correct property and values in randomQuote variable
-    // for ( let quoteProp in randomQuote ) {
-    //   console.log(`${quoteProp}: ${randomQuote[quoteProp]}`);
-    // }
-    // - Allan C.
 
   // 2. Create a variable that initiates your HTML string with 
   // the first two <p></p> elements, their classNames, 
   // and the quote and source properties, but leave off 
   // the second closing `</p>` tag for now
 
-  // Confirming values in Object properties
-  // - Allan C.
   console.log(`Quote: ${randomQuote.quote}`);
   console.log(`Source: ${randomQuote.source}`);
   let html = `<p class="quote">${randomQuote.quote}</p><p class="source">${randomQuote.source}`;
@@ -107,8 +75,6 @@ function printQuote() {
   // to the HTML string
 
   if ( randomQuote.citation ) {
-    // Confirming values in Object properties
-    // - Allan C.
     console.log(`Citation: ${randomQuote.citation}`);
     html += `<span class="citation">${randomQuote.citation}</span>`;
   }
@@ -119,15 +85,11 @@ function printQuote() {
   //string
   
   if ( randomQuote.year ) {
-    // Confirming values in Object properties
-    // - Allan C.
     console.log(`Year: ${randomQuote.year}`);
     html += `<span class="year">${randomQuote.year}</span>`;
   }
 
   if ( randomQuote.tag ) {
-    // Confirming values in Object properties
-    // - Allan C.
     console.log(`Tag: ${randomQuote.tag}`);
     html += `<span class="year"><br>${randomQuote.tag}</span>`;
   }
@@ -135,9 +97,6 @@ function printQuote() {
   // 5. After the two if statements, concatenate the closing </p> 
   // tag to the HTML string
 
-  
-  // Closing the <p> tag initilized on line 98
-  // - Allan C.
   html += `</p>`;
 
   // 6. set the innerHTML of the quote-box div to equal the 
