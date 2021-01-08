@@ -4,7 +4,7 @@ project 1 - A Random Quote Generator
 ******************************************/
 
   // Quote to test script connection, just for fun... and it's Admiral Ackbar!!!
-  console.log(`"It's a trap!" - Admiral Ackbar (Erik Bauersfeld), Star Wars: Return of the Jedi, 1983 `);
+  console.log(`"It's a trap!" - Admiral Ackbar (Erik Bauersfeld), Star Wars: Return of the Jedi, 1983`);
 
 // For assistance: 
   // Check the "Project Resources" section of the project instructions
