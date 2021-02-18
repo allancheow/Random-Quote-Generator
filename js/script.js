@@ -3,12 +3,12 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
+// Initiate variables to be used
 const autoButtonText = document.querySelector('#auto-quote');
 
 /***
  * `getRandomQuote` function
 ***/
-
 const getRandomQuote = () => {
   /**
    * An arrow expression to randomly generate a number
@@ -27,7 +27,7 @@ const getRandomQuote = () => {
 /***
  * `printQuote` function
 ***/
-const  printQuote = () => {
+const printQuote = () => {
   let randomQuote = getRandomQuote();
   let html = `<p class="quote">${randomQuote.quote}</p><p class="source">${randomQuote.source}`;
 
@@ -71,7 +71,6 @@ const autoPrintQuote = () => {
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 // New auto quote button listener
 document.getElementById('auto-quote').addEventListener("click", autoPrintQuote, false);
