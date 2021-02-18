@@ -3,15 +3,13 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-  // Quote to test script connection, just for fun... and it's Admiral Ackbar!!!
-  console.log(`"It's a trap!" - Admiral Ackbar (Erik Bauersfeld), Star Wars: Return of the Jedi, 1983`);
+const autoButtonText = document.querySelector('#auto-quote');
 
 /***
  * `getRandomQuote` function
 ***/
 
-function getRandomQuote() {
-
+const getRandomQuote = () => {
   /**
    * An arrow expression to randomly generate a number
    * from 0 through the maximum number of objects in 
@@ -29,15 +27,12 @@ function getRandomQuote() {
 /***
  * `printQuote` function
 ***/
-
-function printQuote() {
+const  printQuote = () => {
   let randomQuote = getRandomQuote();
   let html = `<p class="quote">${randomQuote.quote}</p><p class="source">${randomQuote.source}`;
 
-  randomQuote.citation ? html += `<span class="citation">${randomQuote.citation}</span>` : null;
-  
+  randomQuote.citation ? html += `<span class="citation">${randomQuote.citation}</span>` : null;  
   randomQuote.year ? html += `<span class="year">${randomQuote.year}</span>` : null;
-
   randomQuote.tag ? html += `<span class="year"><br>${randomQuote.tag}</span>` : null;
 
   html += `</p>`;
@@ -63,15 +58,11 @@ function printQuote() {
    */
   const randomRGB = value => `rgb( ${value()}, ${value()}, ${value()} )`;
   document.querySelector('body').style.backgroundColor = randomRGB(randomNumGen);
-
 };
 
 /**
- * Created an expression function which turns on and off
- * the auto quote generator on button activation. */
-
-const autoButtonText = document.querySelector('#auto-quote');
-
+ * Turns on and off the auto quote generator on button activation. 
+ */
 const autoPrintQuote = () => {
   autoButtonText.textContent === 'Auto Generate' ? (autoQuoter = setInterval(printQuote, 5000), autoButtonText.textContent = `End Auto Generate`) : (autoButtonText.textContent = `Auto Generate`, clearInterval(autoQuoter));
 }
@@ -83,5 +74,4 @@ const autoPrintQuote = () => {
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 // New auto quote button listener
-// - Allan C.
 document.getElementById('auto-quote').addEventListener("click", autoPrintQuote, false);
