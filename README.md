@@ -19,6 +19,7 @@ Used my growing knowledge of basic JavaScript syntax, variables, loops, conditio
 .html and .css files provided by @treehouse  
 .js files build by me (@allancheow) 
 <br>
+<br>
 
 # Demo
 [Link](https://allancheow.github.io/Random-Quote-Generator/)
