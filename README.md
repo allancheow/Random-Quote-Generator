@@ -18,3 +18,6 @@ Used my growing knowledge of basic JavaScript syntax, variables, loops, conditio
 # Credits
 .html and .css files provided by @treehouse  
 .js files build by me (@allancheow)
+
+# Demo
+[Link](https://allancheow.github.io/Random-Quote-Generator/)
